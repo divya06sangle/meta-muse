@@ -1,0 +1,14 @@
+{
+  "name": "muse-adforge",
+  "version": "1.0.0",
+  "description": "Muse AdForge – AI Project Advertising & Sales Studio powered by Meta Muse Spark",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": ["muse-adforge", "meta-muse", "muse-spark", "advertising-studio", "sales-pitch", "marketing-ai"],
+  "author": "Antigravity",
+  "license": "MIT"
+}

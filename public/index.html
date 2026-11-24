@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090e">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Muse AdForge – AI Project Advertising & Sales Studio | Powered by Meta Muse</title>
+  <meta name="description" content="Transform project details into high-converting marketing strategies, Instagram ads, LinkedIn campaigns, website promotional copy, and 30-second sales pitches with Meta Muse Spark.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Ambient Atmospheric Glows -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand-logo" id="brandLogo">
+        <div class="logo-mark">
+          <svg class="meta-infinity-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 10C8.358 10 5 13.582 5 18C5 22.418 8.358 26 12.5 26C15.82 26 18.15 23.85 20.35 20.95L20.85 20.3C22.65 17.9 24.2 16 26.5 16C28.985 16 31 18.015 31 20.5C31 22.985 28.985 25 26.5 25C24.7 25 23.35 23.95 22.1 22.3L20.65 24.2C22.25 26.3 24.2 27.5 26.5 27.5C30.366 27.5 33.5 24.366 33.5 20.5C33.5 16.634 30.366 13.5 26.5 13.5C23.18 13.5 20.85 15.65 18.65 18.55L18.15 19.2C16.35 21.6 14.8 23.5 12.5 23.5C10.015 23.5 8 21.485 8 19C8 16.515 10.015 14.5 12.5 14.5C14.3 14.5 15.65 15.55 16.9 17.2L18.35 15.3C16.75 13.2 14.8 12 12.5 12V10Z" fill="url(#adforge-meta-grad)"/>
+            <defs>
+              <linearGradient id="adforge-meta-grad" x1="5" y1="10" x2="33.5" y2="27.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0064E0"/>
+                <stop offset="0.5" stop-color="#00D2FF"/>
+                <stop offset="1" stop-color="#A855F7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="forge-sparkle">✦</span>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title-row">
+            <span class="brand-name">MUSE <span class="brand-highlight">ADFORGE</span></span>
+            <span class="badge-tag">ENTERPRISE STUDIO</span>
+          </div>
+          <span class="brand-tagline">AI Project Advertising & Sales Studio • Meta Muse Spark</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Mode Switcher & Status -->
+    <div class="header-center">
+      <div class="mode-pill-container" id="modeSelectorGroup" title="Toggle between Live Meta Muse API and Zero-Cost Demo Simulation">
+        <button class="mode-pill-btn active" id="btnModeSim">
+          <span class="mode-dot dot-sim"></span>
+          <span class="mode-text">Demo / Simulation</span>
+        </button>
+        <button class="mode-pill-btn" id="btnModeLive">
+          <span class="mode-dot dot-live"></span>
+          <span class="mode-text">Live Meta Muse</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Header Actions -->
+    <div class="header-right">
+      <div class="sample-dropdown-wrapper">
+        <button class="header-btn" id="btnSampleSelect" title="Load sample company projects">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          <span>Samples</span>
+          <span class="arrow-down">▾</span>
+        </button>
+        <div class="dropdown-menu" id="sampleDropdownMenu" style="display: none;">
+          <div class="dropdown-header">LOAD REAL COMPANY SAMPLE</div>
+          <button class="dropdown-item" data-sample="devpulse">
+            <span class="sample-icon">⚡</span>
+            <div class="sample-info">
+              <strong>DevPulse Cloud</strong>
+              <small>Autonomous Kubernetes Optimization</small>
+            </div>
+          </button>
+          <button class="dropdown-item" data-sample="novapay">
+            <span class="sample-icon">💳</span>
+            <div class="sample-info">
+              <strong>NovaPay Global</strong>
+              <small>Multi-Currency Borderless FinTech API</small>
+            </div>
+          </button>
+          <button class="dropdown-item" data-sample="vitascan">
+            <span class="sample-icon">🩺</span>
+            <div class="sample-info">
+              <strong>VitaScan AI</strong>
+              <small>Clinical AI Telemetry & Diagnostics</small>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <button id="btnViewHistory" class="header-btn" title="View Previously Saved Campaigns">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
+        </svg>
+        <span>Saved (<span id="savedCountBadge">0</span>)</span>
+      </button>
+
+      <button id="btnOpenSettings" class="header-btn primary-glow-btn" title="Meta API Key and Model Configuration">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        <span>API Config</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Interactive Workflow Stepper Bar -->
+  <nav class="workflow-stepper" aria-label="Campaign Pipeline">
+    <div class="stepper-track">
+      <button class="step-node active" id="stepNode1" data-target="sectionProjectDetails">
+        <span class="step-num">1</span>
+        <div class="step-text">
+          <span class="step-title">Project Details</span>
+          <span class="step-subtitle">Company parameters</span>
+        </div>
+      </button>
+      <div class="step-connector"></div>
+
+      <button class="step-node" id="stepNode2" data-target="sectionGenerateCampaign">
+        <span class="step-num">2</span>
+        <div class="step-text">
+          <span class="step-title">Generate Campaign</span>
+          <span class="step-subtitle">Meta Muse reasoning</span>
+        </div>
+      </button>
+      <div class="step-connector"></div>
+
+      <button class="step-node" id="stepNode3" data-target="sectionGeneratedAds">
+        <span class="step-num">3</span>
+        <div class="step-text">
+          <span class="step-title">Generated Ads</span>
+          <span class="step-subtitle">Instagram, LinkedIn, Web</span>
+        </div>
+      </button>
+      <div class="step-connector"></div>
+
+      <button class="step-node" id="stepNode4" data-target="sectionSalesPitch">
+        <span class="step-num">4</span>
+        <div class="step-text">
+          <span class="step-title">Sales Pitch</span>
+          <span class="step-subtitle">30s spoken teleprompter</span>
+        </div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Banner: Mode Clarification -->
+  <section class="mode-banner" id="modeBanner">
+    <div class="banner-content">
+      <span class="banner-badge sim-badge" id="bannerBadge">SIMULATION MODE</span>
+      <span class="banner-text" id="bannerText">
+        Running zero-cost interactive simulation with Meta Muse Spark reasoning logic. No API tokens consumed.
+      </span>
+    </div>
+    <div class="banner-actions">
+      <button class="banner-btn" id="btnBannerAction">Configure Live API Key</button>
+    </div>
+  </section>
+
+  <!-- Main Application Body -->
+  <main class="studio-main-container">
+
+    <!-- ================================================================= -->
+    <!-- SECTION 1: PROJECT DETAILS (INPUT WORKBENCH)                      -->
+    <!-- ================================================================= -->
+    <section class="studio-section" id="sectionProjectDetails">
+      <div class="section-top-bar">
+        <div class="section-title-wrapper">
+          <span class="section-tag-pill">STEP 1</span>
+          <h2 class="section-heading">Company & Project Details</h2>
+          <p class="section-desc">Provide your project specifications. Meta Muse Spark will deconstruct these parameters to craft a unified, multi-channel GTM campaign.</p>
+        </div>
+        <div class="section-quick-actions">
+          <button class="action-link-btn" id="btnQuickFillDevPulse">⚡ DevPulse Sample</button>
+          <button class="action-link-btn" id="btnResetProjectForm">↺ Reset</button>
+        </div>
+      </div>
+
+      <form id="projectDetailsForm" class="project-form-grid" onsubmit="return false;">
+        <!-- Field 1: Project Name -->
+        <div class="form-card span-1">
+          <label for="inputProjectName" class="form-label">
+            <span>Project / Product Name</span>
+            <span class="required-star">*</span>
+          </label>
+          <input type="text" id="inputProjectName" class="studio-input" placeholder="e.g. DevPulse Cloud" value="DevPulse Cloud" required>
+          <span class="field-hint">The brand or product name representing the initiative.</span>
+        </div>
+
+        <!-- Field 2: Target Customers / Audience -->
+        <div class="form-card span-1">
+          <label for="inputAudience" class="form-label">
+            <span>Target Customers & Audience (ICP)</span>
+            <span class="required-star">*</span>
+          </label>
+          <input type="text" id="inputAudience" class="studio-input" placeholder="e.g. DevOps Engineers, Cloud Architects, VPs of Infrastructure" value="DevOps Engineers, Cloud Architects, VPs of Infrastructure" required>
+          <span class="field-hint">Ideal Customer Profile (ICP) and decision-makers.</span>
+        </div>
+
+        <!-- Field 3: Project Description -->
+        <div class="form-card span-2">
+          <label for="inputDescription" class="form-label">
+            <span>Project Description & Mission</span>
+            <span class="required-star">*</span>
+          </label>
+          <textarea id="inputDescription" class="studio-textarea" rows="3" placeholder="Explain what the product accomplishes, what critical problem it solves, and why it exists..." required>Autonomous cloud infrastructure debugger that detects performance regressions, rightsizes Kubernetes workloads, and slashes cloud spend by up to 40%.</textarea>
+          <span class="field-hint">A clear elevator summary of what the company solves and why buyers care.</span>
+        </div>
+
+        <!-- Field 4: Key Features -->
+        <div class="form-card span-1">
+          <label for="inputFeatures" class="form-label">
+            <span>Key Features & Capabilities</span>
+            <span class="required-star">*</span>
+          </label>
+          <textarea id="inputFeatures" class="studio-textarea" rows="3" placeholder="e.g. Real-time eBPF telemetry, automated pod rightsizing, predictive spot bidding, zero downtime" required>Real-time eBPF kernel telemetry, automated pod rightsizing, predictive spot instance bidding, zero-downtime rollback safety</textarea>
+          <span class="field-hint">Primary technical and operational capabilities.</span>
+        </div>
+
+        <!-- Field 5: Technology Stack -->
+        <div class="form-card span-1">
+          <label for="inputTechnology" class="form-label">
+            <span>Technology Stack & Moat</span>
+            <span class="required-star">*</span>
+          </label>
+          <textarea id="inputTechnology" class="studio-textarea" rows="3" placeholder="e.g. Next.js 15, Rust, eBPF, Kubernetes Operator, ClickHouse, Meta Muse Spark" required>Next.js 15, Rust, eBPF, Kubernetes Operator, Meta Muse Spark, ClickHouse, OpenTelemetry</textarea>
+          <span class="field-hint">Underlying technical architecture that provides credibility.</span>
+        </div>
+
+        <!-- Field 6: Pricing & Business Model -->
+        <div class="form-card span-1">
+          <label for="inputPricing" class="form-label">
+            <span>Pricing & Business Model</span>
+            <span class="required-star">*</span>
+          </label>
+          <input type="text" id="inputPricing" class="studio-input" placeholder="e.g. 14-day free trial, $49/node/mo Pro, Custom Enterprise with 99.99% SLA" value="14-day free trial, $49/node/month Pro, Custom Enterprise with 99.99% SLA" required>
+          <span class="field-hint">Tiering, trial terms, or enterprise pricing structure.</span>
+        </div>
+
+        <!-- Field 7: Campaign Tone & Primary CTA -->
+        <div class="form-card span-1">
+          <div class="dual-inputs-row">
+            <div class="sub-input-col">
+              <label for="selectCampaignTone" class="form-label"><span>Campaign Tone</span></label>
+              <select id="selectCampaignTone" class="studio-select">
+                <option value="High-Growth Tech" selected>High-Growth Tech (Data-backed, Punchy)</option>
+                <option value="Executive Enterprise">Executive Enterprise (Authoritative, ROI-first)</option>
+                <option value="Disruptive Innovator">Disruptive Innovator (Bold, Provocative)</option>
+                <option value="Minimalist Modern">Minimalist Modern (Clean, Direct)</option>
+              </select>
+            </div>
+            <div class="sub-input-col">
+              <label for="inputCampaignCta" class="form-label"><span>Primary Call-to-Action</span></label>
+              <input type="text" id="inputCampaignCta" class="studio-input" value="Start 14-Day Free Trial">
+            </div>
+          </div>
+          <span class="field-hint">Defines the brand voice across ads and primary conversion goal.</span>
+        </div>
+      </form>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 2: GENERATE CAMPAIGN (MUSE REASONING & GENERATION HUB)   -->
+    <!-- ================================================================= -->
+    <section class="studio-section" id="sectionGenerateCampaign">
+      <div class="section-top-bar">
+        <div class="section-title-wrapper">
+          <span class="section-tag-pill">STEP 2</span>
+          <h2 class="section-heading">Generate Campaign with Meta Muse</h2>
+          <p class="section-desc">Meta Muse Spark will formulate a complete Go-To-Market suite: Marketing Strategy, Instagram Ad, LinkedIn Ad, Website Copy, and 30-Second Sales Pitch.</p>
+        </div>
+        <div class="model-selection-pill">
+          <span class="model-label">Engine:</span>
+          <select id="modelSelect" class="inline-select">
+            <option value="muse-spark-1.3" selected>Muse Spark 1.3 (1M Context, Flagship)</option>
+            <option value="muse-spark-1.1">Muse Spark 1.1 (High Speed Agent)</option>
+            <option value="muse-spark">Muse Spark Base</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Action Card -->
+      <div class="generate-hero-card">
+        <div class="hero-card-left">
+          <div class="hero-status-row">
+            <span class="status-indicator-badge" id="heroStatusBadge">Ready to Synthesize</span>
+            <span class="mode-tag-sub" id="heroModeSub">Simulation Mode Active</span>
+          </div>
+          <h3 class="hero-prompt-preview">
+            Generating Omnichannel Campaign for <span id="previewProjectName" class="text-highlight">DevPulse Cloud</span>
+          </h3>
+          <p class="hero-meta-summary" id="heroMetaSummary">
+            Targeting DevOps Engineers, Cloud Architects with High-Growth Tech tone across Instagram, LinkedIn, Web, and Sales Pitch.
+          </p>
+          
+          <div class="contemplation-toggle-row">
+            <label class="switch-control">
+              <input type="checkbox" id="chkContemplation" checked>
+              <span class="switch-track"></span>
+              <span class="switch-label-text">Stream Muse Contemplation Trace (Internal Chain-of-Thought)</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="hero-card-right">
+          <button id="btnGenerateCampaign" class="launch-campaign-btn">
+            <span class="btn-glow-layer"></span>
+            <div class="btn-inner-content">
+              <svg class="btn-spark-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              <span id="generateBtnText" class="btn-main-label">Generate Full Campaign</span>
+            </div>
+            <span class="btn-subtext">5 Marketing & Sales Assets</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Real-Time Metrics HUD -->
+      <div class="metrics-bar" id="metricsBar">
+        <div class="metric-block">
+          <span class="metric-title">STATUS</span>
+          <span class="metric-val status-idle" id="metricStatus">Idle</span>
+        </div>
+        <div class="metric-block">
+          <span class="metric-title">TTFT (LATENCY)</span>
+          <span class="metric-val" id="metricTtft">-- ms</span>
+        </div>
+        <div class="metric-block">
+          <span class="metric-title">THROUGHPUT</span>
+          <span class="metric-val" id="metricSpeed">-- tok/s</span>
+        </div>
+        <div class="metric-block">
+          <span class="metric-title">REASONING TOKENS</span>
+          <span class="metric-val" id="metricReasoning">0</span>
+        </div>
+        <div class="metric-block">
+          <span class="metric-title">TOTAL TOKENS</span>
+          <span class="metric-val" id="metricTotal">0</span>
+        </div>
+      </div>
+
+      <!-- Real-Time Contemplation Drawer -->
+      <div class="contemplation-panel" id="contemplationPanel" style="display: none;">
+        <div class="contemplation-panel-header" id="contemplationToggleHeader">
+          <div class="panel-header-left">
+            <span class="pulse-beacon"></span>
+            <span class="panel-title">Meta Muse Spark Contemplation Trace</span>
+            <span class="timer-badge" id="contemplationTimer">0.0s</span>
+          </div>
+          <button class="icon-toggle-btn" id="btnToggleContemplationView" title="Collapse / Expand Contemplation Trace">▾</button>
+        </div>
+        <div class="contemplation-panel-body" id="contemplationBody">
+          <div class="thinking-steps-stream" id="contemplationSteps"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 3: GENERATED ADS & ASSETS STUDIO                          -->
+    <!-- ================================================================= -->
+    <section class="studio-section" id="sectionGeneratedAds">
+      <div class="section-top-bar">
+        <div class="section-title-wrapper">
+          <span class="section-tag-pill">STEP 3</span>
+          <h2 class="section-heading">Generated Campaign Assets</h2>
+          <p class="section-desc">Interactive marketing suite synthesized for your company. Inspect, regenerate specific channels, copy, or download.</p>
+        </div>
+
+        <!-- Global Campaign Action Buttons -->
+        <div class="global-actions-cluster">
+          <button id="btnRegenerateFullCampaign" class="studio-btn secondary" title="Re-run entire campaign generation">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="23 4 23 10 17 10"></polyline>
+              <polyline points="1 20 1 14 7 14"></polyline>
+              <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+            </svg>
+            <span>Regenerate Campaign</span>
+          </button>
+
+          <button id="btnCopyEntireCampaign" class="studio-btn secondary" title="Copy full campaign markdown to clipboard">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span id="copyAllBtnText">Copy Campaign</span>
+          </button>
+
+          <div class="download-dropdown-wrapper">
+            <button id="btnDownloadCampaign" class="studio-btn primary" title="Download campaign report">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download</span>
+              <span class="arrow-down">▾</span>
+            </button>
+            <div class="dropdown-menu right" id="downloadDropdownMenu" style="display: none;">
+              <button class="dropdown-item" id="btnDownloadMarkdown">
+                <span>📄 Markdown Document (.md)</span>
+              </button>
+              <button class="dropdown-item" id="btnDownloadHtml">
+                <span>🌐 Standalone HTML Presentation (.html)</span>
+              </button>
+              <button class="dropdown-item" id="btnDownloadJson">
+                <span>📦 Structured JSON Package (.json)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabbed Channel Navigation -->
+      <div class="channel-tabs-bar" role="tablist">
+        <button class="channel-tab-btn active" data-tab="tabStrategy" role="tab">
+          <span class="tab-emoji">📊</span>
+          <span class="tab-label">Marketing Strategy</span>
+        </button>
+        <button class="channel-tab-btn" data-tab="tabInstagram" role="tab">
+          <span class="tab-emoji">📸</span>
+          <span class="tab-label">Instagram Ad</span>
+        </button>
+        <button class="channel-tab-btn" data-tab="tabLinkedIn" role="tab">
+          <span class="tab-emoji">💼</span>
+          <span class="tab-label">LinkedIn Ad</span>
+        </button>
+        <button class="channel-tab-btn" data-tab="tabWebsite" role="tab">
+          <span class="tab-emoji">🌐</span>
+          <span class="tab-label">Website Promo Copy</span>
+        </button>
+        <button class="channel-tab-btn" data-tab="tabSalesPitch" role="tab">
+          <span class="tab-emoji">🎙️</span>
+          <span class="tab-label">30-Second Sales Pitch</span>
+        </button>
+        <button class="channel-tab-btn" data-tab="tabFullBrief" role="tab">
+          <span class="tab-emoji">📑</span>
+          <span class="tab-label">All-in-One Executive Brief</span>
+        </button>
+      </div>
+
+      <!-- Tab Viewports -->
+      <div class="tab-viewports-container">
+
+        <!-- Initial Placeholder State -->
+        <div id="campaignPlaceholder" class="empty-campaign-state">
+          <div class="placeholder-icon-wrap">
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <h3>Your AI Marketing & Sales Studio is Ready</h3>
+          <p>Click <strong>"Generate Full Campaign"</strong> above to synthesize your marketing strategy, Instagram ad, LinkedIn ad, website promotional copy, and 30-second sales pitch using Meta Muse Spark.</p>
+          <div class="benefits-pills">
+            <span class="bpill">✓ Target Persona Mapping</span>
+            <span class="bpill">✓ Instagram Visual Carousel</span>
+            <span class="bpill">✓ B2B LinkedIn Thought-Leadership</span>
+            <span class="bpill">✓ High-Conversion Hero Copy</span>
+            <span class="bpill">✓ 30-Second Timed Sales Pitch</span>
+          </div>
+        </div>
+
+        <!-- 1. MARKETING STRATEGY TAB -->
+        <div class="channel-tab-pane" id="tabStrategy" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>Strategic Positioning & Omni-Channel Architecture</h4>
+              <p>Core Value Proposition, ICP persona segmentation, and conversion funnel milestones.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyStrategy">📋 Copy Strategy</button>
+              <button class="mini-action-btn" id="btnRegenStrategy">🔄 Regenerate Strategy</button>
+            </div>
+          </div>
+          <div class="strategy-content-render markdown-body" id="strategyContentArea"></div>
+        </div>
+
+        <!-- 2. INSTAGRAM AD TAB -->
+        <div class="channel-tab-pane" id="tabInstagram" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>Instagram Visual Creative & Feed Copy</h4>
+              <p>Engineered for high engagement, thumb-stopping visuals, benefit breakdown, and high-CTR CTA.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyInstagram">📋 Copy Caption</button>
+              <button class="mini-action-btn" id="btnRegenInstagram">🔄 Regenerate Instagram Ad</button>
+            </div>
+          </div>
+
+          <div class="instagram-split-layout">
+            <!-- Instagram Phone Frame Mockup -->
+            <div class="instagram-device-mockup">
+              <div class="mockup-frame">
+                <!-- IG Header -->
+                <div class="ig-post-header">
+                  <div class="ig-user-badge">
+                    <div class="ig-avatar" id="igAvatar">⚡</div>
+                    <div class="ig-user-text">
+                      <span class="ig-handle" id="igHandle">devpulse.ai</span>
+                      <span class="ig-sponsored">Sponsored</span>
+                    </div>
+                  </div>
+                  <span class="ig-dots">•••</span>
+                </div>
+
+                <!-- IG Creative Visual Frame -->
+                <div class="ig-visual-frame" id="igVisualFrame">
+                  <div class="ig-visual-glow"></div>
+                  <div class="ig-visual-content">
+                    <span class="ig-tag-badge">CLOUD AUTONOMY</span>
+                    <h3 id="igVisualHeadline">Slash Kubernetes Spend by 40%</h3>
+                    <p id="igVisualSub">Zero Downtime. Real-Time Telemetry.</p>
+                    <div class="ig-metrics-strip">
+                      <div class="ig-metric-chip">⚡ 12ms Latency</div>
+                      <div class="ig-metric-chip">💰 Instant ROI</div>
+                    </div>
+                  </div>
+                  <div class="ig-cta-banner">
+                    <span id="igCtaBannerText">Learn More</span>
+                    <span class="ig-cta-arrow">›</span>
+                  </div>
+                </div>
+
+                <!-- IG Action Bar -->
+                <div class="ig-post-actions">
+                  <div class="ig-actions-left">
+                    <span class="ig-icon" title="Like">❤️</span>
+                    <span class="ig-icon" title="Comment">💬</span>
+                    <span class="ig-icon" title="Share">↗️</span>
+                  </div>
+                  <span class="ig-icon" title="Save">🔖</span>
+                </div>
+
+                <!-- IG Likes Count -->
+                <div class="ig-likes-count">Liked by <strong>alex_tech</strong> and <strong>1,429 others</strong></div>
+
+                <!-- IG Caption -->
+                <div class="ig-caption-box" id="igCaptionRender"></div>
+              </div>
+            </div>
+
+            <!-- Instagram Creative Direction & Raw Copy -->
+            <div class="instagram-details-card">
+              <div class="creative-guidelines-box">
+                <span class="guide-tag">CREATIVE DIRECTION FOR DESIGN TEAM</span>
+                <div id="igCreativeNotes" class="guide-text markdown-body"></div>
+              </div>
+              <div class="raw-caption-section">
+                <span class="guide-tag">PRIMARY CAPTION & HASHTAGS</span>
+                <div id="igRawCopy" class="caption-raw-text"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. LINKEDIN AD TAB -->
+        <div class="channel-tab-pane" id="tabLinkedIn" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>LinkedIn Sponsored Thought-Leadership & B2B Ad</h4>
+              <p>High-credibility corporate positioning, problem-solution storytelling, and decision-maker conversion.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyLinkedIn">📋 Copy Post</button>
+              <button class="mini-action-btn" id="btnRegenLinkedIn">🔄 Regenerate LinkedIn Ad</button>
+            </div>
+          </div>
+
+          <div class="linkedin-preview-container">
+            <div class="linkedin-post-card">
+              <!-- LinkedIn Author Row -->
+              <div class="li-author-row">
+                <div class="li-avatar" id="liAvatar">⚡</div>
+                <div class="li-author-meta">
+                  <div class="li-author-name">
+                    <strong id="liCompanyName">DevPulse Cloud</strong>
+                    <span class="li-badge">• 1st</span>
+                  </div>
+                  <span class="li-subtext">Autonomous Cloud Infrastructure • 14,800 followers</span>
+                  <span class="li-promoted">Promoted • 🌐</span>
+                </div>
+                <div class="li-menu-dots">•••</div>
+              </div>
+
+              <!-- LinkedIn Text Body -->
+              <div class="li-post-body markdown-body" id="liPostBody"></div>
+
+              <!-- LinkedIn Link Preview Card -->
+              <div class="li-link-card" id="liLinkCard">
+                <div class="li-link-thumbnail">
+                  <div class="li-thumb-inner">
+                    <span class="li-thumb-logo">MUSE ADFORGE</span>
+                    <span class="li-thumb-title" id="liThumbTitle">DevPulse Cloud Official</span>
+                  </div>
+                </div>
+                <div class="li-link-footer">
+                  <div class="li-link-domain" id="liLinkDomain">devpulse.ai</div>
+                  <div class="li-link-headline" id="liLinkHeadline">Modern Solutions for High-Growth Tech Teams</div>
+                  <button class="li-link-cta-btn" id="liLinkCtaBtn">Learn More</button>
+                </div>
+              </div>
+
+              <!-- LinkedIn Engagement Row -->
+              <div class="li-engagement-counts">
+                <span class="li-reactions-icons">👍 💡 ❤️ 482</span>
+                <span class="li-stats-right">64 comments • 38 reposts</span>
+              </div>
+              <div class="li-reaction-buttons">
+                <button class="li-react-btn">👍 Like</button>
+                <button class="li-react-btn">💬 Comment</button>
+                <button class="li-react-btn">🔁 Repost</button>
+                <button class="li-react-btn">✈️ Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. WEBSITE PROMOTIONAL COPY TAB -->
+        <div class="channel-tab-pane" id="tabWebsite" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>Website Landing Page Promotional Copy</h4>
+              <p>High-converting Hero section, feature benefit pillars, enterprise social proof, and primary CTA.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyWebsite">📋 Copy Copy</button>
+              <button class="mini-action-btn" id="btnRegenWebsite">🔄 Regenerate Website Copy</button>
+            </div>
+          </div>
+
+          <!-- Interactive Web Hero Banner Preview -->
+          <div class="web-hero-mockup-frame">
+            <div class="browser-address-bar">
+              <div class="browser-dots">
+                <span class="bdot red"></span>
+                <span class="bdot yellow"></span>
+                <span class="bdot green"></span>
+              </div>
+              <div class="browser-url-pill">
+                <span class="lock-icon">🔒</span>
+                <span id="webBrowserUrl">https://devpulse.ai</span>
+              </div>
+            </div>
+
+            <div class="web-hero-content">
+              <div class="web-hero-badge" id="webHeroBadge">⚡ THE NEW STANDARD IN CLOUD AUTONOMY</div>
+              <h1 class="web-hero-h1" id="webHeroH1">The Intelligent Backbone for Modern DevOps Teams.</h1>
+              <p class="web-hero-sub" id="webHeroSub">
+                Autonomous cloud infrastructure debugger that detects performance regressions, rightsizes Kubernetes workloads, and slashes cloud spend by up to 40%.
+              </p>
+              <div class="web-hero-ctas">
+                <button class="web-primary-btn" id="webPrimaryCtaBtn">Start 14-Day Free Trial →</button>
+                <button class="web-secondary-btn" id="webSecondaryCtaBtn">Watch 2-Min Demo</button>
+              </div>
+              <div class="web-trust-row">
+                <span class="trust-label">TRUSTED BY BUILDERS AT FORWARD-THINKING TECH COMPANIES</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Cards & Full Section Copy -->
+          <div class="website-sections-breakdown markdown-body" id="webFullCopyRender"></div>
+        </div>
+
+        <!-- 5. 30-SECOND SALES PITCH TAB (Integrated in Section 4 below & previewed here) -->
+        <div class="channel-tab-pane" id="tabSalesPitch" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>30-Second Spoken Sales Pitch Studio</h4>
+              <p>Timed elevator pitch with interval timestamps, coach pacing notes, and teleprompter.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyPitchMini">📋 Copy Pitch</button>
+              <button class="mini-action-btn" id="btnJumpToTeleprompter">🎙️ Jump to Teleprompter</button>
+            </div>
+          </div>
+          <div class="sales-pitch-overview markdown-body" id="pitchOverviewRender"></div>
+        </div>
+
+        <!-- 6. ALL-IN-ONE EXECUTIVE BRIEF TAB -->
+        <div class="channel-tab-pane" id="tabFullBrief" style="display: none;">
+          <div class="pane-action-bar">
+            <div class="pane-action-info">
+              <h4>Consolidated Executive GTM Brief</h4>
+              <p>Full comprehensive markdown dossier with all 5 assets compiled.</p>
+            </div>
+            <div class="pane-action-buttons">
+              <button class="mini-action-btn" id="btnCopyFullBrief">📋 Copy All Markdown</button>
+            </div>
+          </div>
+          <div class="full-brief-render markdown-body" id="fullBriefContentArea"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- SECTION 4: 30-SECOND SALES PITCH (INTERACTIVE TELEPROMPTER)       -->
+    <!-- ================================================================= -->
+    <section class="studio-section" id="sectionSalesPitch">
+      <div class="section-top-bar">
+        <div class="section-title-wrapper">
+          <span class="section-tag-pill">STEP 4</span>
+          <h2 class="section-heading">30-Second Sales Pitch Teleprompter</h2>
+          <p class="section-desc">Practice delivering your executive elevator pitch. The interactive pacing coach highlights each beat as the 30-second clock counts down.</p>
+        </div>
+        <div class="pitch-actions-group">
+          <button class="mini-action-btn" id="btnCopyPitchScript">📋 Copy Script</button>
+          <button class="mini-action-btn" id="btnRegenPitch">🔄 Regenerate Pitch</button>
+        </div>
+      </div>
+
+      <div class="teleprompter-card">
+        <!-- Teleprompter Header & Coach Metrics -->
+        <div class="teleprompter-header">
+          <div class="teleprompter-clock-display">
+            <div class="clock-circle">
+              <span class="clock-seconds" id="clockSeconds">30</span>
+              <span class="clock-unit">SEC</span>
+            </div>
+            <div class="clock-meta">
+              <span class="clock-state" id="clockStatusText">Ready for Delivery</span>
+              <span class="clock-target">Optimal Cadence: 140 words/min</span>
+            </div>
+          </div>
+
+          <div class="teleprompter-controls">
+            <button class="tele-ctrl-btn primary" id="btnStartTeleprompter">
+              <span id="telePlayIcon">▶</span>
+              <span id="telePlayText">Start 30s Practice</span>
+            </button>
+            <button class="tele-ctrl-btn secondary" id="btnResetTeleprompter">↺ Reset</button>
+          </div>
+        </div>
+
+        <!-- Progress Visualizer Bar -->
+        <div class="pitch-progress-track">
+          <div class="pitch-progress-fill" id="pitchProgressFill" style="width: 0%;"></div>
+          <div class="time-markers">
+            <span class="marker marker-0">0:00 (Hook)</span>
+            <span class="marker marker-8">0:08 (Problem & Sol)</span>
+            <span class="marker marker-18">0:18 (Moat)</span>
+            <span class="marker marker-25">0:25 (CTA)</span>
+            <span class="marker marker-30">0:30 (Done)</span>
+          </div>
+        </div>
+
+        <!-- Spoken Teleprompter Content Blocks -->
+        <div class="teleprompter-script-container" id="teleprompterScriptBox">
+          <!-- Block 1: Hook [0:00 - 0:07] -->
+          <div class="teleprompter-beat" id="beatHook" data-start="0" data-end="7">
+            <div class="beat-header">
+              <span class="beat-badge">BEAT 1 • 0:00 - 0:07</span>
+              <span class="beat-label">THE PROVOCATIVE HOOK</span>
+            </div>
+            <p class="beat-speech" id="speechHook">
+              "Did you know that over 40% of software engineering spend is lost to tool fragmentation and manual maintenance every single month?"
+            </p>
+          </div>
+
+          <!-- Block 2: Problem & Solution [0:08 - 0:17] -->
+          <div class="teleprompter-beat" id="beatProblem" data-start="8" data-end="17">
+            <div class="beat-header">
+              <span class="beat-badge">BEAT 2 • 0:08 - 0:17</span>
+              <span class="beat-label">THE BURNING PROBLEM & THE SOLUTION</span>
+            </div>
+            <p class="beat-speech" id="speechProblem">
+              "That’s exactly why we built DevPulse Cloud. It's an autonomous cloud infrastructure debugger. Instead of wrestling with complex alerts, your team gets real-time eBPF optimization right out of the box."
+            </p>
+          </div>
+
+          <!-- Block 3: Unfair Advantage [0:18 - 0:24] -->
+          <div class="teleprompter-beat" id="beatMoat" data-start="18" data-end="24">
+            <div class="beat-header">
+              <span class="beat-badge">BEAT 3 • 0:18 - 0:24</span>
+              <span class="beat-label">THE TECHNOLOGICAL ADVANTAGE</span>
+            </div>
+            <p class="beat-speech" id="speechMoat">
+              "Because we engineered it directly on Rust and Kubernetes Operators, you get instant setup and immediate payback—starting with a zero-risk 14-day free trial."
+            </p>
+          </div>
+
+          <!-- Block 4: Call to Action [0:25 - 0:30] -->
+          <div class="teleprompter-beat" id="beatCta" data-start="25" data-end="30">
+            <div class="beat-header">
+              <span class="beat-badge">BEAT 4 • 0:25 - 0:30</span>
+              <span class="beat-label">THE FRICTIONLESS CLOSE</span>
+            </div>
+            <p class="beat-speech" id="speechCta">
+              "Let’s spin up a sandbox environment on your stack this afternoon—or visit devpulse.ai to start your 14-day free trial. What’s the best email to send your invite to?"
+            </p>
+          </div>
+        </div>
+
+        <!-- Pitch Coach Delivery Advice -->
+        <div class="pitch-coach-footer">
+          <div class="coach-tip">
+            <span class="tip-icon">💡</span>
+            <div class="tip-content">
+              <strong>Executive Delivery Coach:</strong>
+              <span id="coachDeliveryText">Pause for 1 second after the opening hook to let the statistic sink in. Maintain a confident, conversational tempo without rushing the call to action.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================================================================= -->
+  <!-- MODAL: META API & MODEL SETTINGS                                  -->
+  <!-- ================================================================= -->
+  <div class="modal-backdrop" id="settingsModal" style="display: none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title-row">
+          <span class="modal-icon">⚙️</span>
+          <h3>Meta Model API Configuration</h3>
+        </div>
+        <button class="close-modal-btn" id="btnCloseSettings">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          Configure direct streaming access to Meta's official model API (<code>https://api.meta.ai/v1</code>), or run in zero-token Simulation Mode.
+        </p>
+
+        <div class="form-group">
+          <label for="metaApiKeyInput" class="form-label">Meta Developer API Key</label>
+          <div class="input-with-action">
+            <input type="password" id="metaApiKeyInput" class="custom-input" placeholder="meta_sk_...">
+            <button id="btnToggleKeyVisibility" class="input-action-btn" type="button">👁️</button>
+          </div>
+          <span class="form-tip">Keys are stored securely in browser <code>localStorage</code> or local <code>.env</code> and never exposed.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="metaBaseUrlInput" class="form-label">Meta API Base URL</label>
+          <input type="text" id="metaBaseUrlInput" class="custom-input" value="https://api.meta.ai/v1">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Execution Mode</label>
+          <div class="mode-radio-group">
+            <label class="radio-option">
+              <input type="radio" name="modalModeRadio" id="radioSimMode" value="sim" checked>
+              <div class="radio-card">
+                <strong>Demo / Simulation Mode</strong>
+                <small>Zero tokens consumed, high-fidelity synthetic Meta Muse responses</small>
+              </div>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="modalModeRadio" id="radioLiveMode" value="live">
+              <div class="radio-card">
+                <strong>Live Meta Model API</strong>
+                <small>Direct streaming from api.meta.ai using your Meta Developer key</small>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="key-status-box" id="keyStatusBox">
+          <span class="status-indicator-dot"></span>
+          <span id="keyStatusText">Ready</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btnTestKey" class="secondary-btn">Test Connection</button>
+        <button id="btnSaveSettings" class="primary-btn">Save & Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================================= -->
+  <!-- DRAWER: SAVED CAMPAIGNS HISTORY                                   -->
+  <!-- ================================================================= -->
+  <div class="drawer-backdrop" id="historyDrawer" style="display: none;">
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="drawer-title-row">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          <h3>Saved Campaigns Studio</h3>
+        </div>
+        <div class="drawer-actions">
+          <button id="btnClearHistory" class="text-action-btn danger">Clear All</button>
+          <button class="close-modal-btn" id="btnCloseHistory">&times;</button>
+        </div>
+      </div>
+
+      <div class="drawer-body" id="historyListContainer">
+        <p class="empty-history-text">No campaigns saved yet. Generate a campaign to populate your history.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
